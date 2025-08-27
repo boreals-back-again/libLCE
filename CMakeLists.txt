@@ -104,9 +104,10 @@ else ()
 
     target_compile_definitions(libLCE PRIVATE LIBLCE_EXPORTS)
 
-    add_executable(tests tests.cpp)
+	add_subdirectory(tests)
+#   add_executable(tests tests.cpp)
 
-    target_link_libraries(tests PRIVATE libLCE)
+#   target_link_libraries(tests PRIVATE libLCE)
 
 endif ()
 
@@ -117,3 +118,4 @@ endif ()
 if (CMAKE_CXX_BYTE_ORDER EQUAL BIG_ENDIAN)
     target_compile_definitions(libLCE PRIVATE BR_BIG_ENDIAN)
 endif ()
+
